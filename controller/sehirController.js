@@ -10,6 +10,7 @@ const sehirGetir = async (req, res) => {
    
     const tumSehirler = await Sehir.Sehir.find({sehir_kodu:req.params.id});
     res.status(200).json(tumSehirler);
+    console.log(tumSehirler);
 };
 
 const sehirEkle = async (req, res,next) => {
