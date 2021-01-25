@@ -3,13 +3,13 @@ const Sehir = require('../models/sehir_model');
 const sehirleriListele = async (req, res) => {
    
     const tumSehirler = await Sehir.Sehir.find({});
-    res.json(tumSehirler);
+    res.status(200).json(tumSehirler);
 };
 
 const sehirGetir = async (req, res) => {
    
     const tumSehirler = await Sehir.Sehir.find({sehir_kodu:req.params.id});
-    res.json(tumSehirler);
+    res.status(200).json(tumSehirler);
 };
 
 const sehirEkle = async (req, res,next) => {
