@@ -1,4 +1,5 @@
 const express = require('express');
+const dotenv = require('dotenv').config();
 require('./db/db_connection');
 const hataMiddleware = require('./middleware/hata_middleware');
 
@@ -26,6 +27,6 @@ app.get('/', (req, res) => {
 
 app.use(hataMiddleware);
 
-app.listen(3000, () => {
-    console.log("3000 portundan server ayaklandırıldı"); 
+app.listen(process.env.PORT, () => {
+    console.log(`${process.env.PORT} portundan server ayaklandırıldı`); 
 });
